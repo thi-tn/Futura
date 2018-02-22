@@ -44,6 +44,10 @@ for (i = 0; i < chars.length; i++) {
 
 $(document).ready(function(){
   // Add smooth scrolling to all links
+  $('.modal').show();
+  $('.modal button').click(function() {
+    $('.modal').hide();
+  });
   $("a").on('click', function(event) {
    
     // Make sure this.hash has a value before overriding default behavior
