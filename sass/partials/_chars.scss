@@ -135,8 +135,32 @@ main {
 	}
 }
 
-#geo {
-	.filter-options {
-		z-index: 99;
-	}
+
+
+.option-btn {
+	cursor: pointer;
 }
+
+
+#chars-text {
+	.option-btn {
+		font-weight: 700;
+		font-size: 25px;
+	}
+	
+}
+
+.comparative.option-btn {
+	font-weight: 500;
+	//font-size: 22px;
+	padding-right: 10px;
+}
+
+.option-btn.active {
+	color: $activeLink;
+	font-weight: 700;
+}
+
+#grid>.char {
+		transition: .5s ease-in-out;
+	}

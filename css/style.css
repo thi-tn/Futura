@@ -111,8 +111,23 @@ main {
   #irradiation .char {
     height: 30vh; } }
 
-#geo .filter-options {
-  z-index: 99; }
+.option-btn {
+  cursor: pointer; }
+
+#chars-text .option-btn {
+  font-weight: 700;
+  font-size: 25px; }
+
+.comparative.option-btn {
+  font-weight: 500;
+  padding-right: 10px; }
+
+.option-btn.active {
+  color: #FA9102;
+  font-weight: 700; }
+
+#grid > .char {
+  transition: .5s ease-in-out; }
 
 #text {
   position: relative; }
@@ -169,9 +184,9 @@ main {
     object-position: center;
     object-fit: contain; }
 
-.button, .link, a {
+.button, .link, a, .option-btn {
   color: #e8a64b; }
-  .button:hover, .button:active, .button:focus, .link:hover, .link:active, .link:focus, a:hover, a:active, a:focus {
+  .button:hover, .button:active, .button:focus, .link:hover, .link:active, .link:focus, a:hover, a:active, a:focus, .option-btn:hover, .option-btn:active, .option-btn:focus {
     color: #FA9102; }
 
 #scroll-btn {
@@ -211,3 +226,14 @@ main {
     top: calc(50% + 3px); }
   100% {
     top: calc(50% + 0px); } }
+
+.description.upper {
+  z-index: 1000; }
+
+img.side {
+  display: none; }
+
+.description h4 {
+  font-size: 18px;
+  margin-top: 35px;
+  font-weight: 700; }

@@ -70,6 +70,16 @@ $(document).ready(function(){
     } // End if
   });
 
+  $('.cap').click(function() {
+    $('.char').css('text-transform', 'uppercase');
+    $('.option-btn.small').removeClass('active');
+    $('.option-btn.cap').addClass('active');
+  });
+  $('.small').click(function() {
+    $('.char').css('text-transform', 'lowercase');
+    $('.option-btn.small').addClass('active');
+    $('.option-btn.cap').removeClass('active');
+  });
   
   //animate comparisions	
 	var compareId;
@@ -99,8 +109,11 @@ $(document).ready(function(){
     var desIndex = $('.filter-options li').index(this) - 1;
     console.log(desIndex);
     $('.description').animate({opacity: '0'});
-    $('.description').eq(desIndex).animate({opacity: '1'});
+    $('.description').removeClass('upper');
+    $('.description').eq(desIndex).animate({opacity: '1'}).addClass('upper');
+
   });
+
 
   $('.filter-options li').not('#home').click(function() {
     $('#cover').hide('slow');
@@ -113,5 +126,17 @@ $(document).ready(function(){
     $('#cover').show('slow');
   })
 
+  $('.option-btn.over').click(function() {
+    $('img.over').show('slow');
+    $('img.side').hide('slow');
+    $('.option-btn.over').addClass('active');
+    $('.option-btn.side').removeClass('active');
+  });
+  $('.option-btn.side').click(function() {
+    $('img.side').show('slow');
+    $('img.over').hide('slow');
+    $('.option-btn.side').addClass('active');
+     $('.option-btn.over').removeClass('active');
+  });
 });
 
