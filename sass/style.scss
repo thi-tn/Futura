@@ -1,0 +1,196 @@
+$background: #FEF7E6;
+$inactive: #7C745E;
+$active: #A52C35;
+$link: #e8a64b;
+$activeLink: #FA9102;
+$accent: #AABFD8;
+
+body {
+	font-family: "futura-pt", "sans-serif";
+	background-color: $background;
+}
+
+#nav-text {
+	position: sticky;
+	top: 0;
+	
+	@media only screen and (max-width: 768px) {
+		background-color: $background;
+		z-index: 999;
+	}
+	@media only screen and (min-width: 768px) {
+		background-color: transparent;
+		position: fixed;
+	}
+}
+
+// ********* NAV BAR *********
+
+#nav {
+	display: flex;
+	@media only screen and (max-width: 768px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	.nav {
+		margin: 0 auto;
+	}
+	.nav-item {
+		cursor: pointer;
+		i {
+			color: $inactive;
+			font-size: 20px;
+			&:hover {
+				color: $activeLink;
+			}
+		}
+	}
+	.active>a i {
+		color: $active;
+	}
+
+	@media only screen and (min-width: 768px) {
+		height: 100vh;
+		.nav.flex-md-column {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.nav-item {
+			height: 12vh;}
+	}
+}
+
+
+
+
+@import 'partials/chars';
+
+#text {
+	position: relative;
+	// top: 0;
+	// left: 0;
+
+	p {font-weight: 500;}
+
+	@media only screen and (min-width: 768px) {
+		text-align: left;
+		top: 0;
+		//left: 16.67%;
+		margin-top: 108px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	@media only screen and (max-width: 767px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-right: 60px;
+		padding-left: 60px;
+	}
+}
+
+.description {
+	background: $background;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	right: 30px;
+	@media only screen and (min-width: 768px) {
+		left: 15px;
+		right: 15px;
+	}
+	h2 {
+		font-weight: 700;
+		color: $active;
+		margin-bottom: 30px;
+	}
+	
+	opacity: 0;
+}
+
+#chars-text {
+	opacity: 1;
+}
+
+#cover {
+	background: $background;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	
+	#home-chars {
+		padding-top: 9%;
+		padding-bottom: 9%;
+		padding-right: 0;
+	}
+	img {
+		height: 100%;
+	width: 100%;
+	object-position: center;
+	object-fit: contain;
+	}
+	
+}
+
+.button, .link, a {
+	color: $link;
+	&:hover, &:active, &:focus {
+		color: $activeLink;
+	}
+}
+
+#scroll-btn {
+	height: 100vh;
+	position: relative;
+	font-size: 60px;
+	
+	//transition: 1s ease-in;
+	i {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-animation: scroll-btn 1s infinite; /* Safari 4.0 - 8.0 */
+    -moz-animation: scroll-btn 1s infinite;
+    animation: scroll-btn 1s infinite;
+	}
+}
+
+
+@-webkit-keyframes scroll-btn {
+	0% {
+		top: 1.5px;
+	}
+	50% {
+		top: 3px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+@-moz-keyframes scroll-btn {
+	0% {
+		top: 1.5px;
+	}
+	50% {
+		top: 3px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+@keyframes scroll-btn {
+	0% {
+		top: calc(50% + 1.5px);
+	}
+	50% {
+		top: calc(50% + 3px);
+	}
+	100% {
+		top: calc(50% + 0px);
+	}
+}

@@ -1,0 +1,142 @@
+main {
+	height: 100vh;
+	overflow-y: scroll;
+	-ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    &::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+#chars {
+	clear:both;
+	@media only screen and (min-width: 768px) {
+		position: absolute;
+		margin-top: 8px;
+		left: 50%;
+		top: 0;
+	}
+}
+
+#home-chars {
+	height: 100vh;
+}
+
+.char {
+	font-size: 100px;
+	line-height: calc(20vh - 30px);
+	font-weight: 500;
+	color: #000;
+	@media only screen and (min-width: 992px) {
+		font-size: 120px;
+	}
+	@media only screen and (min-width: 1700px) {
+		font-size: 150px;
+		line-height: 200px;
+	}
+}
+
+#grid {
+	min-height: 100vh;
+
+	.char {
+		line-height: 25vh;
+	}
+}
+
+
+
+// .circle {
+// 	position: relative;
+// 	&:after {
+// 		position: absolute;
+// 		content: "";
+// 		bottom: 32%;
+// 		border-radius: 50%;
+// 		background: $accent;
+// 		z-index: -1;
+		
+// 		@media only screen and (max-width: 991px) {
+// 			left: 31%;
+// 			width: 37%;
+// 			height: 20%;
+// 		}
+// 		@media only screen and (max-width: 767px) {
+// 			left: 40%;
+// 			width: 22%;
+// 			height: 22%;
+// 		}
+// 		@media only screen and (min-width: 992px) {
+// 			bottom: 31%;
+// 			left: 35%;
+// 			width: 30%;
+// 			height: 22%;
+// 		}
+// 	}
+// }
+
+// .rect {
+// 	position: relative;
+// 	&:after {
+// 		position: absolute;
+// 		content: "";
+// 		bottom: 32%;
+// 		height: 100px;
+// 		width: 100%;
+// 		background: $accent;
+// 		z-index: -1;
+// 	}
+// }
+
+
+.compare-section {
+	display: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	.char {		
+		// font-size: 300px;
+		// line-height: 45vh !important;
+		position: relative;
+		height: 35vh;
+
+		// padding-top: 30px;
+		// padding-bottom: 30px;
+		img {
+			height: 100%;			
+			position: absolute;
+			top: 30px;
+			left: 15px;
+			padding-bottom: 60px;
+		}
+		.overlapsed {
+			z-index: -1;
+		}
+	}
+
+
+	.line {
+		height: 2px;
+		background: #AABFD8;
+	}
+	.char-line {
+		border-width: 2px 0 2px 0;
+		border-style: solid;
+		border-color: $accent;
+	}
+}
+
+#irradiation .char {
+	@media only screen and (max-width: 767px) {
+		height: 35vh;
+	}
+	@media only screen and (max-width: 992px) {
+		height: 30vh;
+	}
+}
+
+#geo {
+	.filter-options {
+		z-index: 99;
+	}
+}
